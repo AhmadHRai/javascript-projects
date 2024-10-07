@@ -1,0 +1,291 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* .header-bg {
+  background-image: url(../images/Header_BG.svg);
+  background-size: cover;
+} */
+
+.text-gray-color {
+  color: #a6a6a6;
+}
+
+.logo {
+  color: #54bd95;
+}
+
+.navbar-nav .nav-link {
+  color: #a6a6a6;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000;
+}
+
+.hero-section-heading::after {
+  content: url(../images/headerSection.svg);
+  display: block;
+  width: 75%;
+  height: 30px;
+  margin-bottom: 40px;
+}
+
+.p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.btn-main {
+  background-color: #54bd95 !important;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.client-logo {
+  width: auto;
+  height: 45px;
+  padding: 5px 20px;
+}
+
+.btn.fs-6 {
+  font-size: 14px !important;
+}
+
+.icon-container {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+}
+
+.icons {
+  width: 25px;
+  height: 25px;
+}
+
+.bg-light-green {
+  background-color: #f9f8fe;
+}
+
+.details-bgColor {
+  position: relative;
+}
+
+.details-bgColor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  background-image: url(../images/mainSectionBG.svg);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.benifitsList {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.benifitsList > li {
+  background: url('../images/icons/list_check.svg') no-repeat;
+  padding-left: 40px;
+  margin: 20px 0px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.planTab {
+  display: inline-flex;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+}
+
+.nav-pills > .nav-item > .nav-link {
+  color: #000;
+  padding: 8px 25px;
+}
+
+.nav-pills > .nav-item > .nav-link.active {
+  background-color: #54bd95 !important;
+  color: #fff;
+}
+
+.planCards {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.planCards > .planCardinBG {
+  border-radius: 15px;
+  background-color: #f9fafb;
+  padding: 10px 20px;
+}
+
+.planCards > .planCardinBG > button {
+  background-color: #fff;
+  border-radius: 15px;
+  color: #54bd95;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+}
+
+.planCards.active {
+  background-image: url('../images/cardBG.svg');
+  background-size: cover;
+  color: #fff;
+}
+
+.planCards.active > .planCardinBG {
+  background-color: #fff;
+  color: #000;
+}
+
+.planCards.active > .planCardinBG > button {
+  color: #fff;
+  background-color: #54bd95;
+}
+
+.footer-bg {
+  background-color: #161c28;
+  color: #fff;
+}
+
+.review > .reviewImg > img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.formBox {
+  background-color: #222938;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.inputwithButton {
+  width: 75%;
+}
+
+.inputwithButton > input {
+  border: 2px solid #a6a6a6;
+  height: 50px;
+  background: transparent;
+}
+
+.inputwithButton > input::placeholder {
+  color: #a6a6a6;
+}
+
+.inputwithButton > button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  padding: 8px;
+}
+
+.inputwithButton > button > img {
+  width: 20px;
+  height: 20px;
+}
+
+.avatar-card {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+}
+
+.avatar-card .card-text {
+  font-size: 12px;
+}
+
+.avatar-card .card-amt {
+  font-size: 14px;
+}
+
+.avatar-card .card-button button {
+  font-size: 12px;
+  background-color: #54bd95;
+  color: #fff;
+}
+
+.heroSectionImg {
+  width: 70%;
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+  .p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .formBox {
+    padding: 25px;
+  }
+
+  .inputwithButton {
+    width: 100%;
+  }
+
+  .text-center-md {
+    text-align: center;
+  }
+
+  .hero-section-heading::after {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .mx-auto-md {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .justify-content-center-md {
+    justify-content: center;
+  }
+
+  .flex-wrap-md {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .review > .reviewImg > img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .heroSectionImg {
+    width: 80%;
+  }
+
+  .avatar-card {
+    width: 160px;
+  }
+
+  .creditCardImg {
+    width: 150px;
+    height: auto;
+  }
+}
