@@ -5,19 +5,46 @@
   position: relative;
 }
 
-html, body {
+html,
+body {
   font-family: "微軟正黑體", arial;
   background-color: #000;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
 a {
   text-decoration: none;
   color: #333;
+}
+
+.video-section {
+  text-align: center;
+  padding: 2rem 9%;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* -------- Layout -------- */
@@ -33,7 +60,42 @@ a {
   clear: both;
 }
 
-.col-lg-12, .col-md-12, .col-sm-12, .col-lg-11, .col-md-11, .col-sm-11, .col-lg-10, .col-md-10, .col-sm-10, .col-lg-9, .col-md-9, .col-sm-9, .col-lg-8, .col-md-8, .col-sm-8, .col-lg-7, .col-md-7, .col-sm-7, .col-lg-6, .col-md-6, .col-sm-6, .col-lg-5, .col-md-5, .col-sm-5, .col-lg-4, .col-md-4, .col-sm-4, .col-lg-3, .col-md-3, .col-sm-3, .col-lg-2, .col-md-2, .col-sm-2, .col-lg-1, .col-md-1, .col-sm-1 {
+.col-lg-12,
+.col-md-12,
+.col-sm-12,
+.col-lg-11,
+.col-md-11,
+.col-sm-11,
+.col-lg-10,
+.col-md-10,
+.col-sm-10,
+.col-lg-9,
+.col-md-9,
+.col-sm-9,
+.col-lg-8,
+.col-md-8,
+.col-sm-8,
+.col-lg-7,
+.col-md-7,
+.col-sm-7,
+.col-lg-6,
+.col-md-6,
+.col-sm-6,
+.col-lg-5,
+.col-md-5,
+.col-sm-5,
+.col-lg-4,
+.col-md-4,
+.col-sm-4,
+.col-lg-3,
+.col-md-3,
+.col-sm-3,
+.col-lg-2,
+.col-md-2,
+.col-sm-2,
+.col-lg-1,
+.col-md-1,
+.col-sm-1 {
   float: left;
   padding-left: 16px;
   padding-right: 16px;
@@ -484,7 +546,7 @@ a {
     margin-bottom: 48px;
   }
 
-  [class^=col-]:last-child .service-item {
+  [class^="col-"]:last-child .service-item {
     margin-bottom: 0;
   }
 }
@@ -522,7 +584,8 @@ a {
   background-position: center;
   background-attachment: fixed;
 }
-.reservation .section-intro .title, .reservation .section-intro .para {
+.reservation .section-intro .title,
+.reservation .section-intro .para {
   color: #fff;
 }
 
@@ -759,7 +822,9 @@ footer .copyright {
   height: 40px;
   margin-bottom: 40px;
 }
-.inputbox input, .inputbox select, .inputbox textarea {
+.inputbox input,
+.inputbox select,
+.inputbox textarea {
   width: 100%;
   padding: 10px;
   border: 2px solid #000;
@@ -775,7 +840,12 @@ footer .copyright {
 .inputbox textarea {
   resize: none;
 }
-.inputbox input:focus ~ label, .inputbox input:valid ~ label, .inputbox select:focus ~ label, .inputbox select:valid ~ label, .inputbox textarea:focus ~ label, .inputbox textarea:valid ~ label {
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label,
+.inputbox select:focus ~ label,
+.inputbox select:valid ~ label,
+.inputbox textarea:focus ~ label,
+.inputbox textarea:valid ~ label {
   color: #b2875c;
   transform: translateX(-17px) translateY(-35px);
 }

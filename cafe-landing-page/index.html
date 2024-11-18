@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <audio id="welcome-audio" autoplay loop>
+    <source src="audio/jazz-music.mp3" type="audio/mpeg" preload="auto" />
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    window.addEventListener("load", function () {
+      var audio = document.getElementById("welcome-audio");
+      audio.play();
+    });
+  </script>
+  <!-- Audio section ends -->
   <div class="wrapper">
     <header class="navbar">
       <div class="container">
@@ -38,6 +49,23 @@
           ><a class="btn btn-secondary btn-large" href="./menu.html">Menu</a>
         </div>
       </div>
+    </section>
+    <section>
+      <section class="video-section" style="margin-top: 10px">
+        <h3 class="sub-heading">Watch Our Special Dishes</h3>
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GWaQiFeQ87g?si=sRaPwgIS-trgE8M6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
     </section>
     <section class="hero bg-white" id="about">
       <div class="container">
