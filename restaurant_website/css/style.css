@@ -509,6 +509,52 @@ header .icons #menu-bars {
   color: var(--light-color);
 }
 
+.menu-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.menu-table caption {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--black);
+  padding: 1.5rem 0;
+  background-color: var(--green);
+  color: #fff;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.menu-table th,
+.menu-table td {
+  padding: 1.5rem;
+  text-align: left;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menu-table th {
+  background-color: rgba(119, 119, 119, 0.1);
+  font-weight: bold;
+  color: var(--black);
+}
+
+.menu-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.menu-table tr:hover {
+  background-color: #f2f2f2;
+  transition: background-color 0.3s ease;
+}
+
+.menu-table td:last-child {
+  text-align: right;
+}
+
 .order form {
   max-width: 90rem;
   border-radius: 0.5rem;
