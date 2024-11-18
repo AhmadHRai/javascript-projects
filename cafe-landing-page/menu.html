@@ -1,0 +1,412 @@
+<DOCTYPE html="html"></DOCTYPE>
+<html lang="zh-TW"></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Website</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="./index.html"> <h1>Cafe Website</h1></a>
+        <div class="nav" id="popup-nav">
+          <a class="nav-link" href="./about.html">About</a
+          ><a class="nav-link" href="./service.html">Services</a
+          ><a class="nav-link" href="./reservation.html">Reservation</a
+          ><a class="nav-link" href="./menu.html">Menu</a
+          ><a class="nav-link" href="./contact.html">Contact</a
+          ><a class="close-btn" href="#!"><span></span><span></span></a>
+        </div>
+        <a class="nav-toggle" href="#popup-nav"
+          ><span></span><span></span><span></span
+        ></a>
+      </div>
+    </header>
+    <section class="hero bg-gray">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="title">Meals at a glance</h2>
+        </div>
+        <div class="service-tabs">
+          <div class="tab flex-col-center" id="coffee-tab">
+            <div class="image-container">
+              <div
+                class="image"
+                style="background-image: url(images/common/icon-coffee.png)"
+              ></div>
+            </div>
+            <p>Coffee</p>
+          </div>
+          <div class="tab flex-col-center" id="dessert-tab">
+            <div class="image-container">
+              <div
+                class="image"
+                style="background-image: url(images/common/icon-dessert.png)"
+              ></div>
+            </div>
+            <p>Dessert</p>
+          </div>
+          <div class="tab flex-col-center" id="beans-tab">
+            <div class="image-container">
+              <div
+                class="image"
+                style="background-image: url(images/common/icon-beans.png)"
+              ></div>
+            </div>
+            <p>Beans</p>
+          </div>
+        </div>
+        <div class="menu-list">
+          <div class="row" id="coffee-list">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/coffee01.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Caffè Americano</h5>
+                    <h6 class="subtitle">
+                      Strong espresso diluted with hot water
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/coffee02.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Latte</h5>
+                    <h6 class="subtitle">Espresso mixed with steamed milk</h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/coffee03.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Mocha</h5>
+                    <h6 class="subtitle">
+                      Espresso with chocolate syrup and milk
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/coffee04.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Espresso</h5>
+                    <h6 class="subtitle">
+                      Concentrated coffee made by forcing hot water through
+                      finely ground coffee beans
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/coffee05.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Espresso Romano</h5>
+                    <h6 class="subtitle">
+                      Strong espresso served with a twist of lemon peel
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+          <div class="row" id="dessert-list">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/dessert01.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Macaron</h5>
+                    <h6 class="subtitle">
+                      Delicate meringue-based cookie sandwich filled with
+                      ganache or jam
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/dessert02.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Cake</h5>
+                    <h6 class="subtitle">
+                      Moist and flavorful cake made with various ingredients
+                      like flour, sugar, and eggs.
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/dessert03.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Ice cream</h5>
+                    <h6 class="subtitle">
+                      Cold dessert made from milk, cream, and sugar, flavored
+                      with various ingredients.
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/dessert04.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Brownie</h5>
+                    <h6 class="subtitle">
+                      Rich, chocolatey square-shaped baked dessert with a fudgy
+                      texture.
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="
+                        background-image: url(images/products/dessert05.jpg);
+                      "
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Donut</h5>
+                    <h6 class="subtitle">
+                      Sweet fried dough pastry typically filled with custard,
+                      jelly, or other sweet fillings
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+          <div class="row" id="beans-list">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="background-image: url(images/products/beans01.jpg)"
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Arabica</h5>
+                    <h6 class="subtitle">
+                      Mild, nuanced flavor with notes of fruit and floral hints
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="background-image: url(images/products/beans02.jpg)"
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Robusta</h5>
+                    <h6 class="subtitle">
+                      Bold, harsher taste with a slightly bitter aftertaste
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="background-image: url(images/products/beans03.jpg)"
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Liberica</h5>
+                    <h6 class="subtitle">
+                      Distinctive fruity and spicy flavors with a hint of herbal
+                      notes
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="background-image: url(images/products/beans04.jpg)"
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Excelsa</h5>
+                    <h6 class="subtitle">
+                      Balanced flavor between Arabica and Robusta, smooth and
+                      full-bodied
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <a href="#!">
+                <div class="menu-item">
+                  <div class="image-container">
+                    <div
+                      class="image"
+                      style="background-image: url(images/products/beans05.jpg)"
+                    ></div>
+                  </div>
+                  <div class="preview">
+                    <h5 class="title">Maragogype</h5>
+                    <h6 class="subtitle">
+                      Large beans produce a mild, low-acidity coffee with a
+                      sweet flavor profile
+                    </h6>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="hero">
+        <div class="mask-dark"></div>
+        <div class="container">
+          <a class="brand" href="#top"></a>
+          <ul class="nav">
+            <a class="nav-link" href="./index.html">Go Home</a>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Photos from freepik and Unsplash and PNGitem</p>
+        <p>Copyright 2024. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      $("#coffee-tab").addClass("tab--open");
+      $("#dessert-list").hide();
+      $("#beans-list").hide();
+
+      $(".tab").click(function () {
+        $(".tab").removeClass("tab--open");
+        $(this).addClass("tab--open");
+
+        if ($("#coffee-tab").hasClass("tab--open")) {
+          $("#coffee-list").show();
+          $("#dessert-list").hide();
+          $("#beans-list").hide();
+        }
+        if ($("#dessert-tab").hasClass("tab--open")) {
+          $("#coffee-list").hide();
+          $("#dessert-list").show();
+          $("#beans-list").hide();
+        }
+        if ($("#beans-tab").hasClass("tab--open")) {
+          $("#coffee-list").hide();
+          $("#dessert-list").hide();
+          $("#beans-list").show();
+        }
+      });
+    </script>
+  </div>
+</body>

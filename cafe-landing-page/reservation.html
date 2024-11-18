@@ -1,0 +1,192 @@
+<DOCTYPE html="html"></DOCTYPE>
+<html lang="zh-TW"></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Website</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="./index.html"> <h1>Cafe Website</h1></a>
+        <div class="nav" id="popup-nav">
+          <a class="nav-link" href="./about.html">About</a
+          ><a class="nav-link" href="./service.html">Services</a
+          ><a class="nav-link" href="./reservation.html">Reservation</a
+          ><a class="nav-link" href="./menu.html">Menu</a
+          ><a class="nav-link" href="./contact.html">Contact</a
+          ><a class="close-btn" href="#!"><span></span><span></span></a>
+        </div>
+        <a class="nav-toggle" href="#popup-nav"
+          ><span></span><span></span><span></span
+        ></a>
+      </div>
+    </header>
+    <section class="hero bg-gray">
+      <div class="container">
+        <div class="section-intro">
+          <h2 class="title">Book Online</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-12 flex-col-center">
+            <form class="reservation-form" action="/booking" method="post">
+              <div class="inputbox">
+                <input type="text" name="name" required="required" />
+                <label for="name">Name</label>
+              </div>
+              <div class="inputbox">
+                <input type="email" name="email" required="required" />
+                <label for="email">Email</label>
+              </div>
+              <div class="inputbox">
+                <input type="tel" name="phone" required="required" />
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="inputbox">
+                <select id="date-input" name="date" required="required">
+                  <option selected="selected" disabled="disabled"></option>
+                </select>
+                <label for="date">Date</label>
+              </div>
+              <div class="inputbox">
+                <select id="time-input" name="time" required="required">
+                  <option selected="selected" disabled="disabled"></option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                </select>
+                <label for="time">Time</label>
+              </div>
+              <div class="inputbox">
+                <input type="number" name="guests" required="required" />
+                <label for="guests">Number of guests</label>
+              </div>
+              <div class="inputbox">
+                <input class="reset" type="reset" value="Clear" />
+                <input class="submit" type="submit" value="Submit" />
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6 col-md-12 flex-col-center">
+            <table class="calender">
+              <tr id="calender-header">
+                <td>Time</td>
+              </tr>
+              <tr class="calender-row">
+                <td>08:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>09:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>10:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>11:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>12:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>13:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>14:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>15:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>16:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>17:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>18:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>19:00</td>
+              </tr>
+              <tr class="calender-row">
+                <td>20:00</td>
+              </tr>
+            </table>
+            <span
+              style="
+                background-color: pink;
+                padding: 5px 10px;
+                border-radius: 5px;
+              "
+              >Coloring indicates that the time slot has been booked</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="hero">
+        <div class="mask-dark"></div>
+        <div class="container">
+          <a class="brand" href="#top"></a>
+          <ul class="nav">
+            <a class="nav-link" href="./index.html">Go Home</a>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Photos from freepik and Unsplash and PNGitem</p>
+        <p>Copyright 2024. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const today = new Date();
+    const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THUR", "FRI", "SAT"];
+    for (let i = 0; i < 7; i++) {
+      const futureDate = new Date();
+      futureDate.setDate(today.getDate() + i);
+      const month = futureDate.getMonth() + 1;
+      const date = futureDate.getDate();
+      const dayOfWeek = daysOfWeek[futureDate.getDay()];
+      const formattedDate = `${month}/${date}(${dayOfWeek})`;
+
+      $("#date-input").append(
+        `<option value="${dayOfWeek}">${formattedDate}</option>`
+      );
+      $("#calender-header").append(`<td>${formattedDate}</td>`);
+      $(".calender-row").append(`<td class="${dayOfWeek}"></td>`);
+    }
+
+    function coloring(time, day) {
+      $(`td:contains("${time}") ~ td.${day}`).css("background-color", "pink");
+    }
+
+    coloring("10:00", "Sun");
+    coloring("15:00", "MON");
+    coloring("19:00", "FRI");
+
+    const form = $("form");
+    form.submit((evt) => {
+      evt.preventDefault();
+      let day = $("#date-input").val();
+      let time = $("#time-input").val();
+      coloring(time, day);
+      form[0].reset();
+    });
+  </script>
+</body>

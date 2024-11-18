@@ -1,0 +1,84 @@
+<DOCTYPE html="html"></DOCTYPE>
+<html lang="zh-TW"></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Website</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="./index.html"> <h1>Cafe Website</h1></a>
+        <div class="nav" id="popup-nav">
+          <a class="nav-link" href="./about.html">About</a
+          ><a class="nav-link" href="./service.html">Services</a
+          ><a class="nav-link" href="./reservation.html">Reservation</a
+          ><a class="nav-link" href="./menu.html">Menu</a
+          ><a class="nav-link" href="./contact.html">Contact</a
+          ><a class="close-btn" href="#!"><span></span><span></span></a>
+        </div>
+        <a class="nav-toggle" href="#popup-nav"
+          ><span></span><span></span><span></span
+        ></a>
+      </div>
+    </header>
+    <section class="hero bg-gray">
+      <div class="container flex-col-center">
+        <div class="section-intro">
+          <h2 class="title">Contact Us</h2>
+          <p class="para">
+            If you have any feedback or questions, please fill out the form or
+            email us at example@gmail.com.
+          </p>
+        </div>
+        <form class="feedback-form" action="/feedback" method="post">
+          <div class="inputbox">
+            <input type="text" name="name" required="required" />
+            <label for="name">Name</label>
+          </div>
+          <div class="inputbox">
+            <input type="email" name="email" required="required" />
+            <label for="email">Email</label>
+          </div>
+          <div class="inputbox feedback">
+            <textarea
+              type="text"
+              name="feedback"
+              rows="10"
+              required="required"
+            ></textarea>
+            <label for="feedback">Feedback</label>
+          </div>
+          <div class="inputbox">
+            <input class="reset" type="reset" value="Clear" />
+            <input
+              class="submit"
+              type="submit"
+              value="Submit"
+              disabled="disabled"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="hero">
+        <div class="mask-dark"></div>
+        <div class="container">
+          <a class="brand" href="#top"></a>
+          <ul class="nav">
+            <a class="nav-link" href="./index.html">Go Home</a>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Photos from freepik and Unsplash and PNGitem</p>
+        <p>Copyright 2024. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>

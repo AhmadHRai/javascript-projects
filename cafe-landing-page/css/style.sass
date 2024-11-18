@@ -1,0 +1,585 @@
+$btnColor: #b2875c
+$btnColor-hover: #d5a25f
+$wordColor: #333
+$width-lg: 960px
+$width-md: 768px
+$width-sm: 540px
+@mixin image-center
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+
+
+/* -------- Global -------- */
+*
+  box-sizing: border-box
+  position: relative
+
+html, body
+  font-family: '微軟正黑體', arial
+  background-color: #000
+  overflow-x: hidden // for Safari RWD
+
+h1,h2,h3,h4,h5,h6,p
+  margin: 0
+
+a
+  text-decoration: none
+  color: $wordColor
+
+/* -------- Layout -------- */
+.container
+  max-width: 1140px
+  width: 100%
+  margin: 0 auto
+
+.row:after
+  content: ''
+  display: block
+  clear: both
+
+%cols
+  float: left
+  padding-left: 16px
+  padding-right: 16px
+
+@for $col from 1 through 12
+  .col-lg-#{$col}, .col-md-#{$col}, .col-sm-#{$col}
+    @extend %cols  // @extend 無法寫進 media query
+
+@for $col from 1 through 12
+  .col-lg-#{$col}
+    width: 100% / 12 * $col
+
+@media screen and (max-width: $width-md)
+  @for $col from 1 through 12
+    .col-md-#{$col}
+      width: 100% / 12 * $col
+
+@media screen and (max-width: $width-sm)
+  @for $col from 1 through 12
+    .col-sm-#{$col}
+      width: 100% / 12 * $col
+
+/* -------- Component -------- */
+/* button */
+.btn
+  display: inline-block
+  vertical-align: top
+  font-size: 16px
+  line-height: 24px
+  padding: 4px 16px
+  border-radius: 4px
+  transition: all 0.3s
+  &.btn-primary
+    background-color: $btnColor
+    border: 1px solid $btnColor
+    color: #fff
+  &.btn-primary:hover
+    background-color: $btnColor-hover
+    border: 1px solid $btnColor-hover
+  &.btn-secondary
+    border: 1px solid $btnColor
+    color: $btnColor
+  &.btn-secondary:hover
+    background-color: $btnColor
+    color: #fff
+  &.btn-large
+    padding: 8px 32px
+
+.btn-container
+  text-align: center
+
+.btn-container .btn
+  margin: 0 12px
+
+@media screen and (max-width: $width-sm)
+  .btn-container
+    display: flex
+    flex-direction: column
+    width: 240px
+    margin: 0 auto
+  .btn-container .btn
+    margin-bottom: 20px
+  .btn-container .btn:last-child
+    margin-bottom: 0
+
+/* image container */
+.image-container
+  width: 100%
+  aspect-ratio: 4/3
+  & .image
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    border-radius: 10px
+
+/* mask-dark */
+.mask-dark
+  background-color: rgba(0,0,0,0.7)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+/* navbar */
+.navbar
+  height: 64px
+  background-color: rgba(0,0,0)
+  position: fixed
+  z-index: 10
+  width: 100%
+  & .brand
+    display: inline-block
+    vertical-align: top
+    width: 160px
+    height: 64px
+    background-image: url('../images/common/logo.jpg ')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    white-space: nowrap
+    text-indent: 100%
+    overflow: hidden
+  & .nav
+    display: flex
+    float: right
+  & .nav .nav-link
+    display: block
+    color: #fff
+    line-height: 24px
+    padding: 20px 16px
+    transition: color 0.3s
+  & .nav .nav-link:hover
+    color: $btnColor-hover
+
+@media screen and (max-width: $width-md)
+  .navbar #popup-nav
+    display: flex
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.9)
+    z-index: 100
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    opacity: 0
+    visibility: hidden
+    transition: all 0.3s
+  #popup-nav:target
+    opacity: 1
+    visibility: visible
+
+/* nav-toggle */
+.navbar .nav-toggle
+  width: 48px
+  height: 48px
+  float: right
+  margin-top: 8px
+  margin-right: 8px
+  display: none
+  flex-direction: column
+  justify-content: space-evenly
+  align-items: center
+  @media screen and (max-width: $width-md)
+    &
+      display: flex
+  & span
+    display: block
+    width: 32px
+    height: 2px
+    background-color: $btnColor
+
+.navbar .close-btn
+  display: none
+  width: 48px
+  height: 48px
+  position: absolute
+  top: 8px
+  right: 8px
+  @media screen and (max-width: $width-md)
+    &
+      display: block
+  & span
+    width: 40px
+    height: 2px
+    position: absolute
+    top: 8px
+    right: 8px
+    background-color: $btnColor
+    top: 50%
+    left: 50%
+  & span:first-child
+    transform: translate(-50%,-50%) rotate(45deg)
+  & span:last-child
+    transform: translate(-50%,-50%) rotate(-45deg)
+
+/* jumbotron */
+.jumbotron
+  padding-top: 224px
+  padding-bottom: 160px
+  background-image: url('../images/bg/bg001.jpg')
+  background-size: cover
+  background-attachment: fixed
+  & .logo-image
+    width: 320px
+    height: 320px
+    margin: 0 auto
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+  & .btn-container
+    margin: 8px auto
+  @media screen and (max-width: $width-md)
+    &
+      padding-top: 144px
+      padding-bottom: 80px
+    & .logo-image
+      width: 200px
+      height: 200px
+
+/* hero */
+.hero
+  padding-top: 150px
+  padding-bottom: 150px
+  @media screen and (max-width: $width-md)
+    &
+      padding-top: 80px
+      padding-bottom: 80px
+  &.bg-white
+    background-color: #fff
+  &.bg-gray
+    background-color: #efefef
+
+/* about */
+@media screen and (max-width: $width-md)
+  .about-preview
+    margin-bottom: 48px
+
+.about-preview
+  & .title
+    font-size: 32px
+    color: $wordColor
+    margin-bottom: 24px
+    margin-top: 50px
+  @media screen and (max-width: $width-lg)
+    & .title
+      margin-top: 0
+  & .para
+    font-size: 16px
+    line-height: 32px
+    color: $wordColor
+    text-align: justify
+    margin-bottom: 24px
+
+/* section-intro */
+.section-intro
+  text-align: center
+  margin-bottom: 40px
+  & .title
+    font-size: 48px
+    color: $wordColor
+    margin-bottom: 24px
+  @media screen and (max-width: $width-md)
+    & .title
+      font-size: 32px
+  & .para
+    font-size: 16px
+    line-height: 32px
+    color: $wordColor
+    margin: 0 auto
+    overflow-wrap: break-word
+    word-wrap: break-word
+
+/* service-item */
+@media screen and (max-width: $width-md)
+  .service-item
+    margin-bottom: 48px
+  [class^="col-"]:last-child .service-item
+    margin-bottom: 0
+
+.service-item
+  & .preview
+    padding-top: 16px
+  & .title
+    font-size: 24px
+    color: $wordColor
+    margin-bottom: 8px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  & .subtitle
+    font-size: 14px
+    color: $btnColor
+    margin-bottom: 16px
+  & .para
+    font-size: 16px
+    color: $wordColor
+    line-height: 24px
+    margin-bottom: 24px
+    text-align: justify
+    height: 72px
+    overflow: hidden
+
+/* reservation */
+.reservation
+  background-image: url('../images/bg/bg002.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  & .section-intro .title, & .section-intro .para
+    color: #fff
+
+/* menu-list */
+.menu-list
+  margin-bottom: 64px
+  &:last-child
+    margin-bottom: 0
+  & .title-bar:after
+    content: ''
+    display: block
+    clear: both
+  & .title-bar .title
+    font-size: 24px
+    line-height: 40px
+    color: $btnColor
+    float: left
+    padding-left: 16px
+    margin-bottom: 16px
+  & .title-bar .title:before
+    content: ''
+    display: inline-block
+    width: 4px
+    height: 24px
+    background-color: $btnColor
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translate(0,-50%)
+  & .title-bar .btn
+    float: right
+    padding-top: 8px
+    padding-bottom: 8px
+  & .menu-item .image-container
+    aspect-ratio: 1/1
+  & .menu-item .title
+    font-size: 18px
+    color: $wordColor
+    line-height: 24px
+    margin-top: 16px
+    margin-bottom: 4px
+  & .menu-item .subtitle
+    margin-bottom: 24px
+    font-size: 14px
+    color: $btnColor
+
+/* contact */
+.contact-info
+  & .title
+    color: $btnColor
+    line-height: 36px
+    margin-bottom: 16px
+  & .title span
+    border-bottom: 2px solid $btnColor
+    display: inline-block
+  & .info td
+    padding-bottom: 24px
+
+.map-container
+  width: 100%
+  padding-top: 75%
+
+.map-container iframe
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+
+/* footer */
+footer
+  background-image: url('../images/bg/bg003.jpg')
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  & .hero
+    padding-top: 50px
+    padding-bottom: 50px
+  & .brand
+    display: block
+    width: 240px
+    height: 120px
+    margin: 0 auto
+    background-image: url('../images/common/logo-w.png')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+  @media screen and (max-width: $width-sm)
+    & .brand
+      width: 200px
+      height: 200px
+  & .nav
+    display: flex
+    justify-content: center
+  & .nav-link
+    color: #fff
+    display: block
+    padding: 24px
+    transition: all 0.3s
+  & .nav-link:hover
+    color: $btnColor
+  @media screen and (max-width: $width-sm)
+    & .nav-link
+      padding: 24px 8px
+  & .copyright
+    background-color: rgba(0,0,0,0.8)
+    color: #fff
+    text-align: center
+    line-height: 24px
+    padding: 16px 0
+    font-size: 14px
+
+/* -------- Utility -------- */
+.lg-hidden
+  display: none
+
+@media screen and (max-width: $width-md)
+  .lg-hidden
+    display: block
+  .lg-display
+    display: none
+
+.flex-col-center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+/* -------- about.html -------- */
+.about
+  padding: 0 20px
+  & .image-container
+    aspect-ratio: 16/9
+  & p
+    margin: 20px 0
+    line-height: 1.5rem
+
+/* -------- service.html -------- */
+.container.service-container
+  width: 60%
+
+.image-container.service-item
+  height: 200px
+  width: 200px
+  margin-bottom: 24px
+
+.service-info
+  & h4
+    margin-top: 24px
+    margin-bottom: 12px
+    font-size: 24px
+    color: $btnColor
+    border-bottom: 2px solid $btnColor
+  & .para
+    margin-bottom: 24px
+    color: $wordColor
+    font-size: 16px
+    line-height: 24px
+    text-align: justify
+
+.service-tabs
+  display: flex
+  justify-content: center
+  margin-bottom: 50px
+  & .tab
+    width: 150px
+    height: 80px
+    background-color: #d8d8d8
+    border: 2px solid $btnColor-hover
+    cursor: pointer
+    &:hover
+      background-color: #aaaaaa
+    & .image-container
+      width: 40px
+      aspect-ratio: 1/1
+    & p
+      margin-top: 5px
+    &:first-child
+      border-top-left-radius: 10px
+      border-bottom-left-radius: 10px
+    &:last-child
+      border-top-right-radius: 10px
+      border-bottom-right-radius: 10px
+    &.tab--open
+      background-color: $btnColor-hover
+
+/* -------- reservation.html -------- */
+.inputbox
+  width: 300px
+  height: 40px
+  margin-bottom: 40px
+  & input, select, textarea
+    width: 100%
+    padding: 10px
+    border: 2px solid #000
+    border-radius: 10px
+  & label
+    position: absolute
+    top: 14px
+    left: 20px
+    color: rgba(0, 0, 0, 0.5)
+    transition: 0.5s
+  & textarea
+    resize: none
+  & input:focus ~ label,
+  & input:valid ~ label,
+  & select:focus ~ label,
+  & select:valid ~ label,
+  & textarea:focus ~ label,
+  & textarea:valid ~ label
+    color: $btnColor
+    transform: translateX(-17px) translateY(-35px)
+  & input.reset
+    margin-left: 55px
+    width: 30%
+    &:hover
+      background: #e3e3e3
+  & input.submit
+    width: 30%
+    color: #fff
+    background-color: $btnColor
+    border: 2px solid $btnColor
+    &:hover
+      background-color: $btnColor-hover
+      border: 2px solid $btnColor-hover
+
+.calender
+  display: block
+  width: 100%
+  margin-top: 20px
+  margin-bottom: 20px
+  overflow-x: auto
+  white-space: nowrap
+  border-collapse: collapse
+  & tr:first-child
+    color: #efefef
+    background: $btnColor
+  & td
+    text-align: center
+    padding: 5px 3px
+    border: 2px solid black
+
+/* -------- contact.html -------- */
+.inputbox.feedback
+  margin-bottom: 200px
